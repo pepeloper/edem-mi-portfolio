@@ -33,4 +33,5 @@ git switch 02-hero
 Guarda tus cambios en un commit antes de cambiar de rama.
 
 Diseño de referencia: https://www.figma.com/design/Ynt4jxiAyLwMKjbX2KDEdj/Alex-Moreno-%C2%B7-Tres-portfolios?node-id=0-1&p=f&t=dyQcLHlh53NrXcyA-11
+
 CSS Layouts: https://css-layout-lab-gamma.vercel.app/
