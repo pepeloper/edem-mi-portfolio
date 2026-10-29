@@ -1,33 +1,37 @@
 # Mi portfolio · EDEM
 
+Implementación del [portfolio de Alex Moreno en Figma](https://www.figma.com/design/Ynt4jxiAyLwMKjbX2KDEdj/Alex-Moreno-%C2%B7-Tres-portfolios?node-id=5-40), siguiendo el ejercicio 01-Portfolio.
+
 ## Abrir el proyecto
 
-```bash
-git clone --branch 01-estructura-base https://github.com/pepeloper/edem-mi-portfolio.git
-cd edem-mi-portfolio
-code .
-```
+Abre `index.html` en el navegador. No necesita instalación ni compilación. La fuente Arimo se carga desde Google Fonts. Las imágenes están guardadas en `assets/`.
 
-Abre `index.html` en el navegador. Guarda los cambios y recarga la página. No necesita instalación ni servidor.
+## Ramas para revisar
 
-## Ramas
+Estas ramas son acumulativas: cada una añade su paso sobre la anterior. La rama `06-css-design` conserva el punto de partida.
 
-Cada rama incluye su paso y los anteriores:
+| Rama | Cambio |
+| --- | --- |
+| `06-css-base` | Variables de color, fuentes y estilos generales. |
+| `07-css-header-navbar` | Cabecera y navegación con Flexbox. |
+| `08-css-hero` | Presentación y botón reutilizable. |
+| `09-css-featured-project` | Sección Trabajo y proyecto Turno. |
+| `10-css-project-list` | Listado de proyectos con Grid. |
+| `11-css-now` | Bloque Ahora y llamada a la acción. |
+| `12-css-contact` | Contacto con Grid y formulario. |
+| `13-css-footer` | Pie de página con Flexbox. |
 
-```text
-01-estructura-base
-02-header-navbar
-02-hero
-03-proyecto-destacado
-03-listado-proyectos
-04-ahora-cta
-05-contacto-footer
-```
-
-Para cambiar de paso:
+Para revisar un paso y compararlo con el anterior:
 
 ```bash
-git switch 02-hero
+git switch 08-css-hero
+git diff 07-css-header-navbar..08-css-hero
 ```
 
-Guarda tus cambios en un commit antes de cambiar de rama.
+Guarda tus cambios en un commit antes de cambiar de rama y recarga el navegador después.
+
+## Organización del CSS
+
+`index.css` importa los estilos generales y los ficheros de cada bloque. Los colores se definen en `css/variables.css`.
+
+Las clases usan BEM en inglés: `hero`, `hero__title` o `contact__control--textarea`. Cada bloque tiene su propio CSS con sus elementos y modificadores. La versión móvil sigue el diseño de Figma.

@@ -1,0 +1,12 @@
+:root {
+	--color-background: #111210;
+	--color-surface: #1b1d1a;
+	--color-text: #f5f5ef;
+	--color-muted: #b5b9b1;
+	--color-accent: #f4774f;
+	--color-on-accent: #15110f;
+	--color-line: #3a3e38;
+	--font-family: "Arimo", Arial, sans-serif;
+	--content-width: 1120px;
+	--page-gutter: 20px;
+}
