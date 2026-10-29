@@ -1,0 +1,32 @@
+.footer {
+	padding: 24px var(--page-gutter);
+	border-top: 1px solid var(--color-line);
+	background-color: var(--color-surface);
+	color: var(--color-muted);
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.footer__container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 24px;
+	max-width: var(--content-width);
+	margin: 0 auto;
+}
+
+.footer__copyright {
+	max-width: 190px;
+}
+
+.footer__back:hover {
+	color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+	.footer__container {
+		flex-direction: column;
+		gap: 12px;
+	}
+}
