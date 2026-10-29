@@ -35,3 +35,5 @@ Guarda tus cambios en un commit antes de cambiar de rama y recarga el navegador 
 `index.css` importa los estilos generales y los ficheros de cada bloque. Los colores se definen en `css/variables.css`.
 
 Las clases usan BEM en inglés: `hero`, `hero__title` o `contact__control--textarea`. Cada bloque tiene su propio CSS con sus elementos y modificadores. La versión móvil sigue el diseño de Figma.
+
+El formulario es solo una práctica de maquetación con HTML y CSS. No envía mensajes.
