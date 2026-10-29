@@ -12,24 +12,27 @@
 </head>
 
 <body id="top">
-	<header>
-		<a href="index.html">Pepe García</a>
-		<nav>
-			<ul>
-				<li><a href="#">Proyectos</a></li>
-				<li><a href="#">Ahora</a></li>
-				<li><a href="#">Contacto</a></li>
-			</ul>
-		</nav>
+	<header class="header">
+		<div class="header__container">
+			<a class="header__brand" href="#top">Alex Moreno<span class="header__dot">.</span></a>
+			<nav class="navigation">
+				<ul class="navigation__list">
+					<li><a class="navigation__link" href="#about">Sobre mí</a></li>
+					<li><a class="navigation__link" href="#work">Trabajo</a></li>
+					<li><a class="navigation__link" href="#now">Ahora</a></li>
+					<li><a class="navigation__link" href="#contact">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 	<main>
-		<section>
+		<section id="about">
 			<p>Desarrollador frontend · Valencia</p>
 			<h1>Pepe García.</h1>
 			<p>Desarrollo productos web con foco en la interfaz, una base sólida en backend y atención al diseño.</p>
 			<a href="#">Ver mi trabajo</a>
 		</section>
-		<section>
+		<section id="work">
 			<h2>Proyectos</h2>
 			<article>
 				<img src="assets/folio.jpg" alt="Folio con una nota diaria, una lista de tareas y apuntes de una reunión" width="640">
@@ -56,12 +59,12 @@
 				</li>
 			</ul>
 		</section>
-		<section>
+		<section id="now">
 			<h2>Ahora</h2>
 			<p>Trabajo como desarrollador frontend en DKB Code Factory y sigo desarrollando productos propios como Folio, Shipwake y Brackit.</p>
 			<a href="https://www.linkedin.com/in/pepegarciag/">Hablemos de tu proyecto</a>
 		</section>
-		<section>
+		<section id="contact">
 			<h2>Contacto</h2>
 			<p>Si quieres hablar de un proyecto o saber más sobre mi trabajo, escríbeme.</p>
 			<a href="https://www.linkedin.com/in/pepegarciag/">Escríbeme en LinkedIn</a>

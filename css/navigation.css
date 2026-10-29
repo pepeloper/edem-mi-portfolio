@@ -1,0 +1,23 @@
+.navigation__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	padding: 0;
+	list-style: none;
+}
+
+.navigation__link {
+	display: block;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.navigation__link:hover {
+	color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+	.navigation__list {
+		gap: 16px;
+	}
+}
