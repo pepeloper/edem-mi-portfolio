@@ -1,0 +1,17 @@
+/* REDES SOCIALES: franja sencilla con los enlaces públicos del portfolio. */
+.redes_sociales {
+    padding: 80px 0;
+    background-color: #1b2a40;
+}
+
+.redes_sociales h2 { font-size: 56px; }
+
+/* Los enlaces se presentan como botones con borde. */
+.redes_sociales ul { display: flex; gap: 16px; margin-top: 24px; }
+.redes_sociales a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--accent);
+    border-radius: 30px;
+}
+.redes_sociales a:hover { background-color: #344155; }

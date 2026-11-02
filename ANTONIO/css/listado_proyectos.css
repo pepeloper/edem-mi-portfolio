@@ -1,0 +1,32 @@
+/* PROYECTOS: espacio general y aspecto común de todas las fichas. */
+
+.lista_proyectos {
+    padding: 80px 0;
+}
+
+.lista_proyectos h2 { font-size: 56px; }
+
+.lista_proyectos__intro {
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+/* Los subtítulos separan los proyectos principales de los demás. */
+.lista_proyectos h3 {
+    margin-top: 36px;
+    font-size: 24px;
+}
+
+/* Ficha común: QuietBrowse usa esta regla y añade su detalle propio. */
+.proyecto {
+    margin-top: 16px;
+    padding: 28px;
+    border: 1px solid #344155;
+    border-radius: 16px;
+    background-color: #172338;
+}
+
+.proyecto h4 { font-size: 28px; }
+.proyecto p { margin: 10px 0 16px; color: var(--muted); }
+.proyecto a { color: var(--accent); font-weight: bold; }
+.proyecto a:hover { text-decoration: underline; }

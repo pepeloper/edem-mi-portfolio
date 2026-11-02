@@ -1,0 +1,26 @@
+/* CONTACTO: invitación a escribir y acceso directo a LinkedIn. */
+.contacto {
+    padding: 80px 0;
+    background-color: var(--background);
+}
+
+.contacto h2 { font-size: 56px; }
+
+.contacto__intro {
+    max-width: 650px;
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+/* Enlace principal de contacto con apariencia de botón. */
+.contacto__enlace {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 11px 24px;
+    border-radius: 30px;
+    background-color: var(--accent);
+    color: #000000;
+    font-weight: bold;
+}
+
+.contacto__enlace:hover { background-color: #ffb18c; }

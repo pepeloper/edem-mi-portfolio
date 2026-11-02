@@ -1,0 +1,241 @@
+/* HEADER.CSS
+   Navbar fija: marca, enlaces de secciones, etiqueta y botón Hablemos.
+   El indicador de sección se resuelve aquí sin JavaScript. */
+
+/* Fija el header arriba de la ventana. pointer-events: none evita que el
+   espacio invisible alrededor de la barra bloquee clics en el hero. */
+.site-header {
+    position: fixed;
+    z-index: 100;
+    inset: 16px 0 auto;
+    padding-inline: 20px;
+    pointer-events: none;
+}
+
+/* Caja visible de la navbar. Las tres columnas son: marca | enlaces | acciones.
+   El fondo oscuro también funciona cuando no hay efecto de cristal. */
+.site-header .nav-shell {
+    width: 100%;
+    max-width: 1320px;
+    min-height: 72px;
+    margin-inline: auto;
+    padding: 10px 22px;
+    display: grid;
+    grid-template-columns: 130px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 22px;
+    background: rgba(17, 27, 45, .84);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, .24);
+    pointer-events: auto;
+}
+
+/* Activa el desenfoque del fondo solo si el navegador lo admite. */
+@supports (backdrop-filter: blur(1px)) {
+    .site-header .nav-shell {
+        background: rgba(17, 27, 45, .65);
+        backdrop-filter: blur(18px);
+    }
+}
+
+/* Logotipo de texto «AN.»; el punto usa el color de acento. */
+.nav-brand {
+    width: max-content;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: -.06em;
+    line-height: 1;
+}
+
+.nav-brand span { color: var(--accent); }
+
+/* Fila central de enlaces. gap mantiene la separación entre ellos. */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+/* Cada enlace reserva espacio debajo para el punto indicador. */
+.nav-links a {
+    position: relative;
+    display: inline-block;
+    padding: 12px 2px 18px;
+    color: var(--text);
+    font-size: .88rem;
+    white-space: nowrap;
+    transition: color .2s ease;
+}
+
+/* Punto naranja bajo cada enlace. Empieza oculto y se muestra al activarse. */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+/* Señal visual al pasar el cursor o navegar con el teclado. */
+.nav-links a:hover,
+.nav-links a:focus-visible { color: var(--accent); }
+
+/* Grupo derecho: etiqueta Diapreneur y llamada a contacto. */
+.nav-actions { display: flex; align-items: center; gap: 14px; }
+
+/* Etiqueta informativa situada antes del botón. */
+.nav-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .07);
+    color: var(--muted);
+    font-size: .78rem;
+    white-space: nowrap;
+}
+
+/* Pequeño punto decorativo dentro de la etiqueta. */
+.nav-status::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+/* Botón Hablemos: es un enlace que baja a #contacto. */
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 11px 19px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 4px 22px rgba(245, 157, 120, .4);
+    color: #14131a;
+    font-size: .83rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Elevación ligera del botón al pasar el cursor. */
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 26px rgba(245, 157, 120, .5);
+}
+
+/* Contorno visible para quien navega con la tecla Tab. */
+.site-header a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* INDICADOR ACTIVO, OPCIÓN 1
+   scroll-target-group compara los href de la lista con las secciones visibles.
+   :target-current colorea el enlace actual y muestra su punto. */
+@supports (scroll-target-group: auto) {
+    .nav-links { scroll-target-group: auto; }
+    .nav-links a:target-current { color: var(--accent); }
+    .nav-links a:target-current::after { opacity: 1; transform: translateY(0); }
+}
+
+/* INDICADOR ACTIVO, RESPALDO BÁSICO
+   Si no existe scroll-target-group, :target reconoce el enlace pulsado.
+   Sin un hash en la URL se marca Inicio. Este respaldo no detecta por sí solo
+   el desplazamiento manual. */
+@supports not (scroll-target-group: auto) {
+    body:not(:has(main :target)) .nav-links a[href="#hero"],
+    body:has(#hero:target) .nav-links a[href="#hero"],
+    body:has(#sobre-mi:target) .nav-links a[href="#sobre-mi"],
+    body:has(#proyectos:target) .nav-links a[href="#proyectos"],
+    body:has(#trayectoria:target) .nav-links a[href="#trayectoria"],
+    body:has(#contacto:target) .nav-links a[href="#contacto"] { color: var(--accent); }
+
+    body:not(:has(main :target)) .nav-links a[href="#hero"]::after,
+    body:has(#hero:target) .nav-links a[href="#hero"]::after,
+    body:has(#sobre-mi:target) .nav-links a[href="#sobre-mi"]::after,
+    body:has(#proyectos:target) .nav-links a[href="#proyectos"]::after,
+    body:has(#trayectoria:target) .nav-links a[href="#trayectoria"]::after,
+    body:has(#contacto:target) .nav-links a[href="#contacto"]::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* INDICADOR ACTIVO, OPCIÓN 2
+   Si el navegador admite timelines de vista, estos mejoran el respaldo:
+   cada sección controla el color y el punto de su enlace mientras se ve.
+   timeline-scope permite conectar las secciones del main con la navbar. */
+@supports not (scroll-target-group: auto) {
+    @supports (view-timeline-name: --nav-hero) and (timeline-scope: --nav-hero) and (animation-timeline: --nav-hero) and (animation-range: cover 20% cover 80%) {
+        body {
+            timeline-scope: --nav-hero, --nav-sobre, --nav-proyectos, --nav-trayectoria, --nav-contacto;
+        }
+
+        /* Cada sección recibe un nombre de timeline distinto. */
+        #hero { view-timeline-name: --nav-hero; }
+        #sobre-mi { view-timeline-name: --nav-sobre; }
+        #proyectos { view-timeline-name: --nav-proyectos; }
+        #trayectoria { view-timeline-name: --nav-trayectoria; }
+        #contacto { view-timeline-name: --nav-contacto; }
+
+        /* Cada enlace toma la timeline de la sección a la que apunta. */
+        .nav-links a[href="#hero"] { --nav-timeline: --nav-hero; }
+        .nav-links a[href="#sobre-mi"] { --nav-timeline: --nav-sobre; }
+        .nav-links a[href="#proyectos"] { --nav-timeline: --nav-proyectos; }
+        .nav-links a[href="#trayectoria"] { --nav-timeline: --nav-trayectoria; }
+        .nav-links a[href="#contacto"] { --nav-timeline: --nav-contacto; }
+
+        /* El texto y el punto se animan entre el 20 % y el 80 % del paso
+           de su sección por la ventana. */
+        .nav-links a {
+            animation: nav-active-text 1s linear both;
+            animation-timeline: var(--nav-timeline);
+            animation-range: cover 20% cover 80%;
+        }
+
+        .nav-links a::after {
+            animation: nav-active-dot 1s linear both;
+            animation-timeline: var(--nav-timeline);
+            animation-range: cover 20% cover 80%;
+        }
+
+        /* Contacto continúa activo mientras se ven el formulario y el footer. */
+        .nav-links a[href="#contacto"] { animation-name: nav-contact-text; }
+        .nav-links a[href="#contacto"]::after { animation-name: nav-contact-dot; }
+
+        /* Estados apagado y encendido del indicador durante el scroll. */
+        @keyframes nav-active-text {
+            0%, 100% { color: var(--text); }
+            1%, 99% { color: var(--accent); }
+        }
+
+        @keyframes nav-active-dot {
+            0%, 100% { opacity: 0; transform: translateY(-4px); }
+            1%, 99% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes nav-contact-text {
+            0% { color: var(--text); }
+            1%, 100% { color: var(--accent); }
+        }
+
+        @keyframes nav-contact-dot {
+            0% { opacity: 0; transform: translateY(-4px); }
+            1%, 100% { opacity: 1; transform: translateY(0); }
+        }
+    }
+}
+

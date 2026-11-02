@@ -1,0 +1,75 @@
+/* BASE.CSS
+   Reglas compartidas por toda la página. Cada sección tiene su propio CSS
+   para los estilos que solo le pertenecen. */
+
+/* Colores comunes: se reutilizan con var(--nombre) en otros archivos. */
+:root {
+  --accent: #F59D78;
+  --text: #ffffff;
+  --muted: #dce2ec;
+  --background: #0d1828;
+}
+
+/* Reinicio: evita márgenes y rellenos por defecto del navegador.
+   border-box hace que el padding y el borde cuenten dentro del ancho. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Desplazamiento suave. El scroll-padding deja sitio para la navbar fija
+   cuando pulsamos un enlace que lleva a una sección. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+/* Aspecto general de toda la página: letra, fondo, color y altura de línea. */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--background);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Centra el contenido y limita su ancho en escritorio. */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Listas y enlaces sin el estilo predeterminado del navegador. */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Botón HTML compartido, usado actualmente en el formulario.
+   Los enlaces con apariencia de botón del hero se diseñan en hero.css. */
+button{
+    background-color: #F59D78;
+    border-radius: 30px;
+    color: #000000;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-width: 2px;
+    border-color: #000000;
+    padding: 12px 24px;
+    font-size: 24px;
+}
+
+/* Respuesta visual del botón cuando se pasa el cursor por encima. */
+button:hover{
+    background-color: #000000;
+    color: #F59D78;
+    border-width: 2px;
+    border-color: #F59D78;
+}
+

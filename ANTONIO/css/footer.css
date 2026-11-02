@@ -1,0 +1,17 @@
+/* FOOTER: firma del portfolio y enlace para regresar al hero. */
+.footer {
+    border-top: 1px solid #344155;
+    background-color: #0a1422;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.footer p { color: var(--muted); }
+.footer a { color: var(--accent); font-weight: bold; }
+.footer a:hover { text-decoration: underline; }

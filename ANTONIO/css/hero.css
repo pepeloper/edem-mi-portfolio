@@ -1,0 +1,76 @@
+/* HERO.CSS
+   Presentación inicial: nombre, descripción, botones y redes sociales.
+   Esta versión usa propiedades básicas para poder ampliarla más adelante. */
+
+/* Fondo y espacio de la primera sección. */
+.hero {
+    min-height: 650px;
+    padding: 150px 0 90px;
+    background-color: #172338;
+    border-bottom: 1px solid #344155;
+}
+
+/* Texto pequeño situado encima del nombre. */
+.hero__eyebrow {
+    margin-bottom: 24px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Nombre principal. */
+.hero h1 {
+    color: #fff;
+    font-size: 88px;
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+/* Profesión y relación con Diapreneur, justo debajo del nombre. */
+.hero__role {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Texto de presentación: ancho limitado para leerlo con comodidad. */
+.hero__description {
+    max-width: 560px;
+    color: var(--muted);
+}
+
+/* Los dos enlaces principales aparecen uno junto al otro. */
+.hero__actions { display: flex; gap: 16px; margin-top: 30px; }
+
+/* Forma compartida de los enlaces con apariencia de botón. */
+.hero__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 24px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Variante destacada para «Ver proyectos». */
+.hero__button--primary {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #000000;
+}
+
+/* Cambios de color sencillos al pasar el cursor. */
+.hero__button:hover { background-color: #2c3b50; }
+.hero__button--primary:hover { background-color: #ffb18c; }
+
+/* Enlaces sociales debajo de los botones. */
+.hero__socials { display: flex; gap: 24px; margin-top: 32px; }
+.hero__socials a { color: var(--muted); }
+.hero__socials a:hover { color: var(--accent); }
+
+/* Contorno de teclado para todos los enlaces del hero. */
+.hero a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }

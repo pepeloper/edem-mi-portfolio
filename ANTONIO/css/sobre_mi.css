@@ -1,0 +1,19 @@
+/* SOBRE MÍ: bloque de presentación con el color principal del portfolio. */
+
+.sobre_mi {
+    padding: 80px 0;
+    background-color: var(--accent);
+    color: #172338;
+}
+
+/* Título de la sección. */
+.sobre_mi h2 {
+    font-size: 56px;
+}
+
+/* El ancho limitado hace más fácil leer el texto. */
+.sobre_mi p {
+    max-width: 700px;
+    margin-top: 16px;
+    font-size: 20px;
+}

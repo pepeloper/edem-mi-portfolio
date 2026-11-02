@@ -1,0 +1,10 @@
+/* QUIETBROWSE: la ficha destacada hereda los estilos de .proyecto. */
+.proyecto_destacado {
+    border: 2px solid var(--accent);
+    background-color: #1d2d43;
+}
+
+.proyecto .proyecto_destacado__etiqueta {
+    color: var(--accent);
+    font-weight: bold;
+}

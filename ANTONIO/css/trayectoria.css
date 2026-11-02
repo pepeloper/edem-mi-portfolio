@@ -1,0 +1,27 @@
+/* TRAYECTORIA: resumen breve de los hitos que aparecen en el HTML. */
+.trayectoria {
+    padding: 80px 0;
+    background-color: #142236;
+}
+
+/* Título y explicación de la sección. */
+.trayectoria h2 { font-size: 56px; }
+.trayectoria .container > p { max-width: 650px; margin-top: 12px; color: var(--muted); }
+
+/* Lista vertical de hitos. */
+.trayectoria__hitos {
+    margin-top: 32px;
+    list-style: none;
+}
+
+/* Cada borde izquierdo forma parte de la línea temporal. */
+.trayectoria__hitos li {
+    margin-top: 20px;
+    padding: 6px 0 8px 20px;
+    border-left: 3px solid var(--accent);
+}
+
+/* El título y la descripción ocupan líneas separadas. */
+.trayectoria__hitos strong { display: block; font-size: 20px; }
+.trayectoria__hitos span { display: block; color: var(--muted); }
+
