@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Raul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/proyecto-destacado.css">
+    <link rel="stylesheet" href="css/listado-proyectos.css">
+    <link rel="stylesheet" href="css/ahora.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/footer.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="header__logo" href="#">Raul Ferris.</a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li><a class="header__link" href="#presentacion">Sobre mí</a></li>
+            <li><a class="header__link" href="#proyectos">Proyectos</a></li>
+            <li><a class="header__link" href="#ahora">Ahora</a></li>
+            <li><a class="header__link" href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="presentacion" class="hero">
+        <div class="container">
+          <p class="hero__label">Técnico en DAM · Valencia</p>
+          <h1 class="hero__title">Raul Ferris.</h1>
+          <p class="hero__text">Creo apps y herramientas con inteligencia artificial que resuelven problemas reales, como vender en Vinted o gestionar un bar.</p>
+          <a class="hero__link" href="#proyectos">Ver mi trabajo</a>
+        </div>
+      </section>
+      <section id="proyectos" class="projects">
+        <div class="container">
+          <h2 class="projects__title">Proyectos</h2>
+          <article class="featured-project">
+            <div class="featured-project__media">
+              <img class="featured-project__image" src="assets/asesor-vinted.jpg" alt="Captura de Asesor Vinted">
+            </div>
+            <div class="featured-project__content">
+              <h3 class="featured-project__title">Asesor Vinted</h3>
+              <p class="featured-project__text">Vendiendo en Vinted perdía mucho tiempo escribiendo anuncios y no sabía cuánto ganaba de verdad con cada venta.</p>
+              <p class="featured-project__text">Hice una app que redacta los anuncios con IA y lleva el control del stock y los beneficios de cada producto.</p>
+              <a class="featured-project__link" href="https://github.com/raulferris6-beep">Ver Asesor Vinted →</a>
+            </div>
+          </article>
+          <h3 class="projects__subtitle">Otros proyectos</h3>
+          <ul class="projects__list">
+            <li>
+              <article class="project-card">
+                <h4 class="project-card__title">TPV</h4>
+                <p class="project-card__text">Punto de venta para bares y restaurantes pequeños, más sencillo que las soluciones habituales, con botones grandes pensados para pantalla táctil.</p>
+                <a class="project-card__link" href="https://github.com/raulferris6-beep">Ver TPV →</a>
+              </article>
+            </li>
+            <li>
+              <article class="project-card">
+                <h4 class="project-card__title">FlipTracker</h4>
+                <p class="project-card__text">Llevaba las compras y ventas de reventa en notas sueltas. Hice una app para apuntar cada compra, cada venta y el stock, y ver el beneficio real.</p>
+                <a class="project-card__link" href="https://github.com/raulferris6-beep">Ver FlipTracker →</a>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="ahora" class="now">
+        <div class="container">
+          <div class="now__card">
+            <div class="now__heading">
+              <h2 class="now__title">Ahora</h2>
+              <span class="now__year">2026</span>
+            </div>
+            <p class="now__text">Estoy cursando el Máster en Desarrollo Web, IA aplicada y DevOps en EDEM y sigo desarrollando mis propias apps, como Asesor Vinted y el TPV.</p>
+            <a class="now__link" href="https://www.linkedin.com/in/raulferrisriera/">Hablemos de tu proyecto</a>
+          </div>
+        </div>
+      </section>
+      <section id="contacto" class="contact">
+        <div class="container contact__inner">
+          <div class="contact__info">
+            <h2 class="contact__title">Hablemos</h2>
+            <p class="contact__text">Si tienes una idea para una app o quieres saber más sobre mis proyectos, escríbeme.</p>
+            <a class="contact__email" href="mailto:raulferris6@gmail.com">raulferris6@gmail.com</a>
+          </div>
+          <form class="contact__form">
+            <h3 class="contact__form-title">Envíame un mensaje</h3>
+            <p class="contact__field">
+              <label class="contact__label" for="nombre">Nombre</label>
+              <input class="contact__input" id="nombre" type="text" name="nombre">
+            </p>
+            <p class="contact__field">
+              <label class="contact__label" for="email">Email</label>
+              <input class="contact__input" id="email" type="email" name="email">
+            </p>
+            <p class="contact__field">
+              <label class="contact__label" for="fecha">¿Cuándo quieres empezar?</label>
+              <input class="contact__input" id="fecha" type="date" name="fecha">
+            </p>
+            <p class="contact__field">
+              <label class="contact__label" for="mensaje">Mensaje</label>
+              <textarea class="contact__input" id="mensaje" name="mensaje" rows="5"></textarea>
+            </p>
+            <button class="contact__button" type="button">Enviar mensaje</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__text">© 2026 Raul Ferris</p>
+        <a class="footer__link" href="#">Volver arriba</a>
+      </div>
+    </footer>
+  </body>
+</html>
